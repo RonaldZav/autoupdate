@@ -25,7 +25,7 @@ efs.forEach((ef) => {
     }
 });
 
-let port = config.read().port;
+let port = config.port;
 
 app.listen(port, () => {
     log(`Listening on ${port} port`, "ready");
