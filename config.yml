@@ -1,5 +1,7 @@
 port: 2008
 secret: "your_repository_secret"
+path: /home/ronaldzav/my_repo
+branch: main
 
 event:
   enable: true

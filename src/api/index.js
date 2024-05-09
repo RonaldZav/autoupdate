@@ -1,5 +1,5 @@
 const { exec } = require('child_process');
-const config = require("../utils/config");
+const config = require("../utils/config").read();
 
 module.exports = {
   name: "/",
@@ -12,7 +12,7 @@ module.exports = {
     if (payload && payload.ref === 'refs/heads/main') {
         log('Changes detected in the GitHub repository', "log");
 
-        exec('git pull origin main', (error, stdout, stderr) => {
+        exec(`git -C ${config.path} pull origin ${config.branch}`, (error, stdout, stderr) => {
             if (error) {
                 log("Error during code update.", "error");
                 console.error(error);

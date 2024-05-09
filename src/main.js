@@ -1,6 +1,6 @@
 const express = require('express');
 const { readdirSync } = require('fs');
-const config = require("./utils/config");
+const config = require("./utils/config").read();
 const app = express();
 const { join } = require('path');
 const { log } = require("./utils/logger");
