@@ -17,14 +17,15 @@ const defaultConfig = `
 
     # Required for private repositories
     account: 
-    user: ronaldzav
-    token: your_token
+        user: ronaldzav
+        token: your_token
 
     event:
-    enable: true
-    type: custom-command
-    command: service your_service_name restart
-    finish_command: yarn`;
+        enable: true
+        type: custom-command
+        command: service your_service_name restart
+        finish_command: yarn
+    `;
 
 fs.access(configFile, fs.constants.F_OK, (err) => {
   if (err) {
